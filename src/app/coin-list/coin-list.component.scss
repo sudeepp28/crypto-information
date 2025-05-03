@@ -1,69 +1,121 @@
-.sub-header {
+.header {
+  height: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 3.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.0083em;
+  }
+
+  h6 {
+    color: darkgray;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.57;
+    letter-spacing: 0.00714em;
+  }
+}
+
+.banner {
+  background-image: url('../../assets/banner2.jpg');
+  height: 400px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .sub-header {
     height: 50%;
-    overflow: hidden;
-    position: relative;
     display: flex;
     align-items: center;
-    background: transparent;
-  
-    .ticker-wrapper {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-  
-      .ticker {
-        display: flex;
-        animation: ticker-scroll 25s linear infinite;
-        width: max-content;
-      }
-  
-      &:hover .ticker {
-        animation-play-state: paused;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .scroll-container {
+      display: inline-flex;
+      animation: scroll-left 25s linear infinite;
+
+      .card {
+        border: 0;
+        background: transparent;
+        color: #fff;
+        padding: 10px;
+        margin: 0 20px;
+        width: 120px;
+        height: 200px;
+        text-align: center;
+
+        img {
+          width: 70px;
+          margin: 0 auto;
+        }
+
+        h5 {
+          font-weight: 500;
+          margin-top: 10px;
+
+          span {
+            color: red;
+            margin-left: 6px;
+          }
+        }
+
+        p {
+          font-weight: 700;
+          margin-top: 5px;
+        }
       }
     }
   }
-  
-  .card {
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0 20px;
-    width: 120px;
-    text-align: center;
-  
-    img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-  
-    h5 {
-      font-weight: 600;
-      font-size: 14px;
-      margin: 0;
-  
-      span {
-        display: block;
-        font-size: 12px;
-        color: red;
-      }
-    }
-  
-    p {
-      font-weight: 700;
-      font-size: 13px;
-      margin: 0;
-    }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
   }
-  
-  @keyframes ticker-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+  100% {
+    transform: translateX(-100%);
   }
-  
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+:host ::ng-deep .mat-sort-header-content {
+  color: #fff;
+}
+
+:host ::ng-deep .mat-paginator-outer-container {
+  background-color: rgb(36, 37, 37);
+}
+
+:host ::ng-deep tr.mat-header-row {
+  background-color: #009688;
+}
+
+:host ::ng-deep tr.mat-row {
+  height: 70px;
+}
+
+.container {
+  margin-top: 40px;
+}
